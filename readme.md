@@ -80,7 +80,8 @@ add_filter( 'bea_iconmoon_fonts', 'bea_override_acf_iconmoon_fonts' );
 add_filter( 'bea_iconmoon_font_family_name', 'bea_override_acf_iconmoon_font_family' );
 function bea_override_acf_iconmoon_font_family() {
     return 'my_custom_font_family_name';
-}```
+}
+```
 
 ## Changelog ##
 
