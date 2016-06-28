@@ -59,7 +59,7 @@ function bea_acf_field_iconmoon_load() {
 	new acf_field_iconmoon_plugin();
 }
 
-add_action( 'init', 'acf_field_iconmoon_init' );
+add_action( 'init', 'bea_acf_field_iconmoon_init' );
 function bea_acf_field_iconmoon_init() {
 	// Load translations
 	load_plugin_textdomain( 'bea-acf-iconmoon', false, plugin_dir_path( __FILE__ ) . 'languages' );

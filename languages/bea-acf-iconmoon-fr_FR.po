@@ -17,7 +17,8 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: iconmoon-v4.php iconmoon-v5.php
+#: ../iconmoon-v4.php
+#: ../iconmoon-v5.php
 #, php-format
 msgid "Icon selector"
 msgstr "Sélecteur d'icône"

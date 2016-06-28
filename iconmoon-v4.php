@@ -99,11 +99,11 @@ class acf_field_iconmoon extends acf_field {
 			'ttf' => $this->settings['dir'].'assets/css/fonts/icomoon.ttf?-v5pt2y',
 			'svg' => $this->settings['dir'].'assets/css/fonts/icomoon.svg?-v5pt2y#icomoon',
 		) );
-
+		$font_name = apply_filters( 'bea_iconmoon_font_family_name', 'icomoon' );
 		?>
 		<style type="text/css" >
 			@font-face {
-				font-family: 'icomoon';
+				font-family: '<?php echo esc_attr( $font_name ); ?>';
 				src:url('<?php echo esc_url( $fonts['eot'] ); ?>');
 				src:url('<?php echo esc_url( $fonts['eot'] ); ?>') format('embedded-opentype'),
 				url('<?php echo esc_url( $fonts['woff'] ); ?>') format('woff'),
