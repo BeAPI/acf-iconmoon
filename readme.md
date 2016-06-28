@@ -9,7 +9,7 @@ One activated you'll be able to use a custom ACF field type which is an icon sel
 
 In case you want to include this small plugin to your project running composer you can add this line to your composer.json :
 
-```
+``` PHP
   "repositories": [
     {
       "type": "vcs",
