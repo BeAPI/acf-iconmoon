@@ -85,6 +85,10 @@ function bea_override_acf_iconmoon_font_family() {
 
 ## Changelog ##
 
+### 0.2
+* 28 June 2016
+* lang, gitignore + readme
+
 ### 0.1
 * 12 Feb 2016
 * initial

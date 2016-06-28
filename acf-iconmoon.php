@@ -2,11 +2,13 @@
 /*
 Plugin Name: Advanced Custom Fields: Iconmoon
 Description: Add iconmoon selector
-Version: 2.0.1
+Version: 0.2
 Author: Be API
 Author URI: www.beapi.fr
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Domain Path: languages
+Text Domain: bea-acf-iconmoon
 */
 
 
@@ -52,7 +54,13 @@ class acf_field_iconmoon_plugin {
 
 }
 
-add_action( 'plugins_loaded', 'acf_field_iconmoon_load' );
-function acf_field_iconmoon_load() {
+add_action( 'plugins_loaded', 'bea_acf_field_iconmoon_load' );
+function bea_acf_field_iconmoon_load() {
 	new acf_field_iconmoon_plugin();
+}
+
+add_action( 'init', 'acf_field_iconmoon_init' );
+function bea_acf_field_iconmoon_init() {
+	// Load translations
+	load_plugin_textdomain( 'bea-acf-iconmoon', false, plugin_dir_path( __FILE__ ) . 'languages' );
 }
