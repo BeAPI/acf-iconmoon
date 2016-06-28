@@ -18,7 +18,7 @@ class acf_field_iconmoon extends acf_field {
 	function __construct() {
 		// vars
 		$this->name     = 'iconmoon';
-		$this->label    = __( 'Selecteur d\'icones' );
+		$this->label    = __( 'Icon selector', 'bea-acf-iconmoon' );
 		$this->category = __( "Basic", 'acf' ); // Basic, Content, Choice, etc
 		$this->defaults = array( // add default here to merge into your field.
 			// This makes life easy when creating the field options as you don't need to use any if( isset('') ) logic. eg:
