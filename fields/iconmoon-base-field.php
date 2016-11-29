@@ -24,8 +24,15 @@ class acf_field_iconmoon_base extends acf_field {
 	 */
 	public function parse_css() {
 
-		// Get default file path
-		$filepath = apply_filters( 'bea_iconmoon_filepath', ACF_ICOMOON_DIR . 'assets/css/style.css' );
+		$filepath = ACF_ICOMOON_DIR . 'assets/css/style.css';
+		/**
+		 * The path to the icomoon stylesheet.
+		 *
+		 * @since 0.1
+		 *
+		 * @param string $filepath default path
+		 */
+		$filepath = apply_filters( 'bea_iconmoon_filepath', $filepath );
 		if ( ! file_exists( $filepath ) ) {
 			return array();
 		}
@@ -63,16 +70,30 @@ class acf_field_iconmoon_base extends acf_field {
 
 		$base_url = ACF_ICOMOON_URL;
 
-		$font_name = apply_filters( 'bea_iconmoon_font_family_name', 'icomoon' );
-		$font_urls = apply_filters(
-			'bea_iconmoon_fonts',
-			array(
-				'eot'  => $base_url . 'assets/css/fonts/icomoon.eot?-v5pt2y',
-				'woff' => $base_url . 'assets/css/fonts/icomoon.woff?-v5pt2y',
-				'ttf'  => $base_url . 'assets/css/fonts/icomoon.ttf?-v5pt2y',
-				'svg'  => $base_url . 'assets/css/fonts/icomoon.svg?-v5pt2y#icomoon',
-			)
+		$font_name = 'icomoon';
+		/**
+		 * The font's name
+		 *
+		 * @since 0.1
+		 *
+		 * @param string $font_name the default font's name
+		 */
+		$font_name = apply_filters( 'bea_iconmoon_font_family_name', $font_name );
+
+		$font_urls = array(
+			'eot'  => $base_url . 'assets/css/fonts/icomoon.eot?-v5pt2y',
+			'woff' => $base_url . 'assets/css/fonts/icomoon.woff?-v5pt2y',
+			'ttf'  => $base_url . 'assets/css/fonts/icomoon.ttf?-v5pt2y',
+			'svg'  => $base_url . 'assets/css/fonts/icomoon.svg?-v5pt2y#icomoon',
 		);
+		/**
+		 * The font's files URLs
+		 *
+		 * @since 0.1
+		 *
+		 * @param array $font_urls the default font's file URLs
+		 */
+		$font_urls = apply_filters( 'bea_iconmoon_fonts', $font_urls );
 
 		?>
         <style type="text/css">
@@ -126,7 +147,15 @@ class acf_field_iconmoon_base extends acf_field {
 			'3.5.2'
 		);
 
-		$css_file = apply_filters( 'bea_iconmoon_fileurl', ACF_ICOMOON_URL . 'assets/css/style' . $suffix . '.css' );
+		$css_file = ACF_ICOMOON_URL . 'assets/css/style' . $suffix . '.css';
+		/**
+		 * The icomoon stylesheet's URL.
+		 *
+		 * @since 0.1
+		 *
+		 * @param string $css_file the default icomoon stylesheet's URL
+		 */
+		$css_file = apply_filters( 'bea_iconmoon_fileurl', $css_file );
 		wp_register_style(
 			'acf-input-iconmoon',
 			$css_file,
