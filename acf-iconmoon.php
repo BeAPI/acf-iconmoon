@@ -28,15 +28,22 @@
  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 
+if ( ! defined( 'ABSPATH' ) ) {
+	die();
+}
+
+define( 'ACF_ICOMOON_VER', '0.2' );
+define( 'ACF_ICOMOON_URL', plugin_dir_url( __FILE__ ) );
+define( 'ACF_ICOMOON_DIR', plugin_dir_path( __FILE__ ) );
+
 class acf_field_iconmoon_plugin {
 
 	/**
-	 *  Construct
+	 * Constructor.
 	 *
-	 *  @description:
-	 *  @since: 3.6
-	 *  @created: 1/04/13
-	 * @author Nicolas Juen
+	 * Load plugin's translation and register icomoon fields.
+	 *
+	 * @since 0.1
 	 */
 	function __construct() {
 
@@ -49,6 +56,8 @@ class acf_field_iconmoon_plugin {
 
 	/**
 	 * Load plugin translation.
+	 *
+	 * @since 0.1
 	 */
 	public static function load_translation() {
 		load_plugin_textdomain(
@@ -59,33 +68,30 @@ class acf_field_iconmoon_plugin {
 	}
 
 	/**
-	 * register_fields
+	 * Register Icomoon field for ACF v4.
 	 *
-	 *  @description:
-	 *  @since: 3.6
-	 *  @created: 1/04/13
-	 * @author Nicolas Juen
+	 * @since 0.1
 	 */
 	public static function register_field_v4() {
-		include_once( 'iconmoon-v4.php' );
+		include_once( ACF_ICOMOON_DIR . 'fields/iconmoon-base-field.php' );
+		include_once( ACF_ICOMOON_DIR . 'fields/iconmoon-v4.php' );
 	}
 
 	/**
-	 *  register_fields
+	 * Register Icomoon field for ACF v5.
 	 *
-	 *  @description:
-	 *  @since: 3.6
-	 *  @created: 1/04/13
-	 * @author Nicolas Juen
+	 * @since 0.1
 	 */
 	public static function register_field_v5() {
-		include_once( 'iconmoon-v5.php' );
+		include_once( ACF_ICOMOON_DIR . 'fields/iconmoon-base-field.php' );
+		include_once( ACF_ICOMOON_DIR . 'fields/iconmoon-v5.php' );
 	}
-
 }
 
 /**
- * Init plugin
+ * Init plugin.
+ *
+ * @since 0.1
  */
 function bea_acf_field_iconmoon_load() {
 	new acf_field_iconmoon_plugin();
