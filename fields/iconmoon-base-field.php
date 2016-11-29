@@ -20,6 +20,8 @@ class acf_field_iconmoon_base extends acf_field {
 	/**
 	 * Extract icons from icomoon stylesheet.
 	 *
+	 * @since 0.1
+	 *
 	 * @return array|bool
 	 */
 	public function parse_css() {
@@ -170,6 +172,8 @@ class acf_field_iconmoon_base extends acf_field {
 
 	/**
 	 * Display Icomoon style in head.
+	 *
+	 * @since 0.1
 	 */
 	public function input_admin_head() {
 		$this->display_css();
