@@ -77,10 +77,12 @@ add_filter( 'bea_iconmoon_font_family_name', 'bea_override_acf_iconmoon_font_fam
 
 ## Changelog ##
 
-### 0.2
-* 28 June 2016
+### 0.3 (December 22, 2016)
+* Refactor plugin
+* Add support for clear button
+
+### 0.2 (June 28, 2016)
 * lang, gitignore + readme
 
-### 0.1
-* 12 Feb 2016
-* initial
+### 0.1 (February 12, 2016)
+* initial commit

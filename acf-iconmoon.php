@@ -1,7 +1,7 @@
 <?php
 /*
  Plugin Name: Advanced Custom Fields: Iconmoon
- Version: 0.2
+ Version: 0.3
  Plugin URI: http://www.beapi.fr
  Description: Add icomoon selector
  Author: BE API Technical team
@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die();
 }
 
-define( 'ACF_ICOMOON_VER', '0.2' );
+define( 'ACF_ICOMOON_VER', '0.3' );
 define( 'ACF_ICOMOON_URL', plugin_dir_url( __FILE__ ) );
 define( 'ACF_ICOMOON_DIR', plugin_dir_path( __FILE__ ) );
 
