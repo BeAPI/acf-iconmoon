@@ -102,24 +102,24 @@ class acf_field_iconmoon_base extends acf_field {
             @font-face {
                 font-family: '<?php echo esc_attr( $font_name ); ?>';
                 <?php if ( ! empty( $font_urls['eot'] ) ) : ?>
-				src: url('<?php echo esc_url( $font_urls['eot'] ); ?>');
-				<?php endif; ?>
+                src: url('<?php echo esc_url( $font_urls['eot'] ); ?>');
+                <?php endif; ?>
 
-				<?php if ( ! empty( $font_urls['eot'] ) ) : ?>
-				src: url('<?php echo esc_url( $font_urls['eot'] ); ?>') format('embedded-opentype');
-				<?php endif; ?>
+                <?php if ( ! empty( $font_urls['eot'] ) ) : ?>
+                src: url('<?php echo esc_url( $font_urls['eot'] ); ?>') format('embedded-opentype');
+                <?php endif; ?>
 
-				<?php if ( ! empty( $font_urls['woff'] ) ) : ?>
-				src: url('<?php echo esc_url( $font_urls['woff'] ); ?>') format('woff');
-				<?php endif; ?>
+                <?php if ( ! empty( $font_urls['woff'] ) ) : ?>
+                src: url('<?php echo esc_url( $font_urls['woff'] ); ?>') format('woff');
+                <?php endif; ?>
 
-				<?php if ( ! empty( $font_urls['ttf'] ) ) : ?>
-				src: url('<?php echo esc_url( $font_urls['ttf'] ); ?>') format('truetype');
-				<?php endif; ?>
+                <?php if ( ! empty( $font_urls['ttf'] ) ) : ?>
+                src: url('<?php echo esc_url( $font_urls['ttf'] ); ?>') format('truetype');
+                <?php endif; ?>
 
-				<?php if ( ! empty( $font_urls['svg'] ) ) : ?>
-				src: url('<?php echo esc_url( $font_urls['svg'] ); ?>') format('svg');
-				<?php endif; ?>
+                <?php if ( ! empty( $font_urls['svg'] ) ) : ?>
+                src: url('<?php echo esc_url( $font_urls['svg'] ); ?>') format('svg');
+                <?php endif; ?>
                 font-weight: normal;
                 font-style: normal;
             }
