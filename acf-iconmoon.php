@@ -83,6 +83,17 @@ class acf_field_iconmoon_plugin {
 	 * @since 0.1
 	 */
 	public static function register_field_v5() {
+
+		$enqueue_select2 = acf_get_setting( 'enqueue_select2' );
+		if ( is_null( $enqueue_select2 ) ) {
+			acf_update_setting( 'enqueue_select2', true );
+		}
+
+		$select2_version = acf_get_setting( 'select2_version' );
+		if ( is_null( $select2_version ) ) {
+			acf_update_setting( 'select2_version', 3 );
+		}
+
 		include_once( ACF_ICOMOON_DIR . 'fields/iconmoon-base-field.php' );
 		include_once( ACF_ICOMOON_DIR . 'fields/iconmoon-v5.php' );
 	}

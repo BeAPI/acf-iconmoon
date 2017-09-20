@@ -64,6 +64,65 @@ class acf_field_iconmoon extends acf_field_iconmoon_base {
                data-allow-clear="<?php echo esc_attr( $field['allow_clear'] ) ?>"/>
 		<?php
 	}
+
+	/**
+	 * Enqueue assets for the Icomoon field in admin
+	 *
+	 * @since 0.1
+	 */
+	function input_admin_enqueue_scripts() {
+
+		// The suffix
+		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG === true ? '' : '.min';
+
+		if ( ! wp_script_is( 'select2', 'registered' ) ) {
+			wp_register_script(
+				'select2',
+				ACF_ICOMOON_URL . 'assets/js/select2/select2' . $suffix . '.js',
+				array( 'jquery' ),
+				'3.5.2'
+			);
+
+			wp_register_style(
+				'select2',
+				ACF_ICOMOON_URL . 'assets/js/select2/select2.css',
+				array(),
+				'3.5.2'
+			);
+		}
+
+		// Scripts
+		wp_register_script(
+			'acf-input-iconmoon',
+			ACF_ICOMOON_URL . 'assets/js/input' . $suffix . '.js',
+			array( 'select2' ),
+			ACF_ICOMOON_VER
+		);
+
+		// Localizing the script
+		wp_localize_script( 'acf-input-iconmoon', 'bea_acf_iconmon', $this->parse_css() );
+
+		// Styles
+		$css_file = ACF_ICOMOON_URL . 'assets/css/style' . $suffix . '.css';
+		/**
+		 * The icomoon stylesheet's URL.
+		 *
+		 * @since 0.1
+		 *
+		 * @param string $css_file the default icomoon stylesheet's URL
+		 */
+		$css_file = apply_filters( 'bea_iconmoon_fileurl', $css_file );
+		wp_register_style(
+			'acf-input-iconmoon',
+			$css_file,
+			array( 'select2' ),
+			ACF_ICOMOON_VER
+		);
+
+		// Enqueuing
+		wp_enqueue_style( 'acf-input-iconmoon' );
+		wp_enqueue_script( 'acf-input-iconmoon' );
+	}
 }
 
 // create field
