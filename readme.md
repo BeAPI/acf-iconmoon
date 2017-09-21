@@ -77,6 +77,9 @@ add_filter( 'bea_iconmoon_font_family_name', 'bea_override_acf_iconmoon_font_fam
 
 ## Changelog ##
 
+### 0.4 (September 21, 2017)
+* Add support for Select2 v4
+
 ### 0.3 (December 22, 2016)
 * Refactor plugin
 * Add support for clear button
