@@ -141,32 +141,11 @@ class acf_field_iconmoon_base extends acf_field {
 		global $wp_scripts;
 
 		// vars
-		$min = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
-		$major = acf_get_setting('select2_version');
-
-		// attempt to find 3rd party Select2 version
-		// - avoid including v3 CSS when v4 JS is already enququed
-		if( isset($wp_scripts->registered['select2']) ) {
-			$major = (int) $wp_scripts->registered['select2']->ver;
-		}
-
-		// v4
-		if( $major == 4 ) {
-			$version = '4.0';
-			$script = acf_get_dir("assets/inc/select2/4/select2.full{$min}.js");
-			$style = acf_get_dir("assets/inc/select2/4/select2{$min}.css");
-
-		} else { // v3
-			$version = '3.5.2';
-			if ( version_compare( acf_get_setting( 'version' ), '5.5.0', '>=' ) ) {
-				$script = acf_get_dir("assets/inc/select2/3/select2{$min}.js");
-				$style = acf_get_dir("assets/inc/select2/3/select2.css");
-			} else {
-				$script = acf_get_dir("assets/inc/select2/select2{$min}.js");
-				$style = acf_get_dir('assets/inc/select2/select2.css');
-			}
-		}
-
+		$min     = defined('SCRIPT_DEBUG') && SCRIPT_DEBUG ? '' : '.min';
+		$version = '4.0';
+		$script  = acf_get_url( "assets/inc/select2/4/select2.full{$min}.js" );
+		$style   = acf_get_url( "assets/inc/select2/4/select2{$min}.css" );
+		
 		// enqueue
 		wp_enqueue_script('select2', $script, array('jquery'), $version );
 		wp_enqueue_style('select2', $style, '', $version );
