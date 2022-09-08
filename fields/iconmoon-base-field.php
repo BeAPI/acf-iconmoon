@@ -63,7 +63,7 @@ class acf_field_iconmoon_base extends acf_field {
 		// If not extract them from the CSS file
 		$contents = file_get_contents( $filepath );
 
-		preg_match_all( '#.icon-(.*):before#', $contents, $css );
+		preg_match_all( '#\.icon-([^:]*)::?before#', $contents, $css );
 		array_shift( $css );
 
 
