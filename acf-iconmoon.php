@@ -1,7 +1,7 @@
 <?php
 /*
  Plugin Name: Advanced Custom Fields: Iconmoon
- Version: 0.4
+ Version: 0.5
  Plugin URI: http://www.beapi.fr
  Description: Add icomoon selector
  Author: BE API Technical team
@@ -11,7 +11,7 @@
 
  ----
 
- Copyright 2017 BE API Technical team (human@beapi.fr)
+ Copyright 2022 BE API Technical team (human@beapi.fr)
 
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die();
 }
 
-define( 'ACF_ICOMOON_VER', '0.4' );
+define( 'ACF_ICOMOON_VER', '0.5' );
 define( 'ACF_ICOMOON_URL', plugin_dir_url( __FILE__ ) );
 define( 'ACF_ICOMOON_DIR', plugin_dir_path( __FILE__ ) );
 

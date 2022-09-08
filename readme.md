@@ -77,6 +77,9 @@ add_filter( 'bea_iconmoon_font_family_name', 'bea_override_acf_iconmoon_font_fam
 
 ## Changelog ##
 
+### 0.5 (September 9, 2022)
+* Update regex use for extracting icon's name from CSS file 
+
 ### 0.4 (September 21, 2017)
 * Add support for Select2 v4
 
